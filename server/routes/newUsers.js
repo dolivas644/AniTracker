@@ -12,18 +12,18 @@ router.post('/', async (req, res) => {
       sub: req.body.sub
   
     }
-    //console.log(newUser);
+    console.log(newUser);
   
     const queryEmail = 'SELECT * FROM users WHERE email=$1 LIMIT 1';
     const valuesEmail = [newUser.email]
     const resultsEmail = await db.query(queryEmail, valuesEmail);
-    if(resultsEmail.rows[0]){
-      console.log(`Thank you ${resultsEmail.rows[0].name} for coming back`)
+    if(resultsEmail.length > 0){
+      console.log(`Thank you for coming back`)
     } else{
     const query = 'INSERT INTO users(name, picture, email, sub) VALUES($1, $2, $3, $4) RETURNING *'
     const values = [ newUser.name, newUser.picture, newUser.email, newUser.sub]
     const result = await db.query(query, values);
-    console.log(result.rows[0]);
+    console.log(result);
   
     }
   
