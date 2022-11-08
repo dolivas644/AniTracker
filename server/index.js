@@ -12,4 +12,8 @@ app.use(bodyparser.json());
 
 app.use("/me", usersRouter);
 
+app.get("/", function(req, res) {
+    res.json("Working request")
+})
+
 app.listen(PORT, () => console.log(`Hola! Server is running on port ${PORT}`));
