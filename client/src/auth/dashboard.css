@@ -1,0 +1,7 @@
+.container{
+    display: flex;
+    column-count: 2;
+}
+img{
+    height: 200px;
+}
