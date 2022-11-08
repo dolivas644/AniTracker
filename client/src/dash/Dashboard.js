@@ -4,12 +4,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Logo from './Logo.png';
 
 const Dashboard = () => {
-    const {
-        loginWithRedirect,
-        logout,
-        user,
-        isAuthenticated
-    } = useAuth0();
+    // const {
+    //     loginWithRedirect,
+    //     logout,
+    //     user,
+    //     isAuthenticated
+    // } = useAuth0();
 
     return (
         <div>
@@ -34,7 +34,8 @@ const Dashboard = () => {
                     </h2>
                     <h3>JOIN OUR SITE TO STAY UPDATED WITH THE LATEST ANIME</h3>
                 </div>
-                <div className='right'>
+                
+                {/* <div className='right'>
                     <ul>
                         <li><button onClick={loginWithRedirect}>Login with redirect</button></li>
                         <li><button onClick={logout}>Logout</button></li>
@@ -44,7 +45,7 @@ const Dashboard = () => {
                         <pre style={{ textAlign: 'start' }}>
                             {JSON.stringify(user, null, 2)}
                         </pre>)}
-                </div>
+                </div> */}
             </div>
 
 
