@@ -5,6 +5,7 @@ import NavBar from './auth/nav-bar';
 import { useAuth0 } from '@auth0/auth0-react';
 import Loading from './auth/loading';
 import {Route, Routes, Link } from 'react-router-dom';
+import LoginDash from './components/Login/LoginDash';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
     <div id="app" className="d-flex flex-column h-100">
     <NavBar />
     <div className="container flex-grow-1">
-    {!user ? <span>Hello from Techtonica</span> : <Dashboard /> }
+    {!user ? <LoginDash/> : <Dashboard /> }
 
     </div>
   </div>
