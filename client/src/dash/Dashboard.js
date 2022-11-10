@@ -19,20 +19,7 @@ const Dashboard = () => {
                     <h1>WELCOME TO </h1>
                     <img src={Logo} alt='logoIcon'></img>
                     <br></br>
-                    <h2>EXPLORE NEW TITLES WITH OUR SEARCH FEATURE</h2>
-                    <h2>FIND THE HOTTEST
-                        <br></br>
-                        - ANIME
-                        <br></br>
-                        - MANGA
-                        <br></br>
-                        - CHARACTERS
-                        <br></br>
-                        - PEOPLE
-                        <br></br>
-                        - REVIEWS
-                    </h2>
-                    <h3>JOIN OUR SITE TO STAY UPDATED WITH THE LATEST ANIME</h3>
+                    
                 </div>
                 
                 {/* <div className='right'>
