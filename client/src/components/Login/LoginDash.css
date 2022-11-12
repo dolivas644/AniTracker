@@ -1,11 +1,21 @@
 .HeadImg{
-    height:300px;
-    width: 100%;
+    height:400px;
+    width: 100% !important;
+    margin: 0%;
 }
 .ListImg{
-    height:300px;
+    height:400px;
     width: 100%;
 }
+.AniImg{
+    width:100%;
+    height: 400px;
+}
+.AniListImg{
+    width:100%;
+    height: 400px;
+}
+
 h1{
     background-color: #fff;
     border-radius: 24px;
@@ -15,4 +25,13 @@ h1{
     color: #3c4043;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.dark{
+    background-color: #333;
+    color:#fff
+}
+.light{
+    background-color: #fff;
+    color: #333;
 }

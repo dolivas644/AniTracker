@@ -10,7 +10,6 @@ router.post('/', async (req, res) => {
       picture: req.body.picture,
       email: req.body.email,
       sub: req.body.sub
-  
     }
     console.log(newUser);
   
