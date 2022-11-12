@@ -6,30 +6,14 @@ import HeadImg from '../Images/Head.png'
 import ListImg from '../Images/ListImg.png'
 import AniList from './Images/AniList.png'
 import AniSearch from './Images/AniSearch.png'
-import { useState, useEffect } from 'react';
 import Footer from '../Footer/Footer';
 
 const LoginDash = () => {
-
-const [theme, setTheme]=useState('light');
-
-const toggleTheme = () => {
-    if (theme === 'light'){
-        setTheme('dark')
-    }else{
-        setTheme('light')
-    }
-}
-useEffect(() =>{
-    document.body.className = theme;
-}, [theme])
-
 
     return (
         <div>
 
             <div className='main'>
-                <button className='button-17' onClick={toggleTheme}>Light/Dark</button>
                 <h1> Use the Log In button to get full access</h1>
                 <img className="HeadImg" src={HeadImg} alt="First slide"></img>
                 
