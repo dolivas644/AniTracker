@@ -7,6 +7,8 @@ import ListImg from '../Images/ListImg.png'
 import AniList from './Images/AniList.png'
 import AniSearch from './Images/AniSearch.png'
 import { useState, useEffect } from 'react';
+import Footer from '../Footer/Footer';
+
 const LoginDash = () => {
 
 const [theme, setTheme]=useState('light');
@@ -21,7 +23,8 @@ const toggleTheme = () => {
 useEffect(() =>{
     document.body.className = theme;
 }, [theme])
-          
+
+
     return (
         <div>
 
@@ -31,13 +34,12 @@ useEffect(() =>{
                 <img className="HeadImg" src={HeadImg} alt="First slide"></img>
                 
                 <img className="AniImg" src={AniSearch} alt="First slide"></img>
-                <img className="HeadImg" src={ListImg} alt="First slide"></img>
+                {/* <img className="HeadImg" src={ListImg} alt="First slide"></img>
                 <br></br>
-                <img className="AniListImg" src={AniList} alt="First slide"></img>
-                
-
-               
+                <img className="AniListImg" src={AniList} alt="First slide"></img> */}
+             
             </div>
+            <Footer/>
         </div>
     )
 }
