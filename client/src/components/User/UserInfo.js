@@ -1,18 +1,35 @@
-import React from "react";
+import React from 'react';
+import './User.css';
 
-function UserInfo() {
-    return (
-        <>
-            <div className="Header">
-                <header className="App-header">
-                This is my User info page
-                </header>
-
-            </div>
-           
-        </>
-
-    );
-}
+const UserInfo = (props) => {
+  let user = props.user;
+  console.log(user);
+ 
+  return (
+    <div>
+      <div className="profileContent">
+        <div className="col-md text-center text-md-left">
+        <img src={user.picture}
+            alt="Profile"
+            className="profileImg"
+          />
+          <h2>Name: {user.name}</h2>
+        </div>
+        <div className="col-md text-center text-md-left">
+          <h2>Nickname: {user.nickname}</h2>
+        </div>
+        <div className="col-md text-center text-md-left">
+          <h2>Email: {user.email}</h2>
+        </div>
+      </div>
+     
+      <div className="row">
+        <pre className="col-12 text-light bg-dark p-4">
+          {JSON.stringify(user, null, 2)}
+        </pre>
+      </div>
+    </div>
+  );
+};
 
 export default UserInfo;
