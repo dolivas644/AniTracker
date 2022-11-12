@@ -12,8 +12,21 @@ import Contact from './components/Contact/Contact';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserInfo from './components/User/UserInfo';
 import HomeNav from './components/Nav/HomeNav';
+import { useState, useEffect } from 'react';
 function App() {
 
+  const [theme, setTheme]=useState('light');
+
+  const toggleTheme = () => {
+      if (theme === 'light'){
+          setTheme('dark')
+      }else{
+          setTheme('light')
+      }
+  }
+  useEffect(() =>{
+      document.body.className = theme;
+  }, [theme])
   const { isLoading } = useAuth0();
   const { user } = useAuth0();
   if (isLoading) {
@@ -23,6 +36,7 @@ function App() {
   return (
     <div id="app" className="d-flex flex-column h-100">
     <NavBar />
+    <button className='button-17' onClick={toggleTheme}>Light/Dark</button>
     <div className="NavBar">
       {!user ? "":
         <Router>
