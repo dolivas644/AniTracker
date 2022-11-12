@@ -76,6 +76,7 @@
   }
   .floatLeft{
     align-items: flex-start;
+    float: left;
   }
   .floatRight{
 

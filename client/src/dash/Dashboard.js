@@ -16,9 +16,6 @@ const Dashboard = () => {
             
             <div className='container'>
                 <div className='left'>
-                    <h1>WELCOME TO </h1>
-                    <img src={Logo} alt='logoIcon'></img>
-                    <br></br>
                     
                 </div>
                 
