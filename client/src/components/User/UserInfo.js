@@ -1,6 +1,5 @@
-
-
 import React from 'react';
+import './User.css';
 
 const UserInfo = (props) => {
   let user = props.user;
@@ -8,21 +7,22 @@ const UserInfo = (props) => {
  
   return (
     <div>
-      <div className="row align-items-center profile-header">
+      <div className="profileContent">
         <div className="col-md text-center text-md-left">
-          <h2>{user.name}</h2>
+        <img src={user.picture}
+            alt="Profile"
+            className="profileImg"
+          />
+          <h2>Name: {user.name}</h2>
         </div>
         <div className="col-md text-center text-md-left">
-          <h2>{user.nickname}</h2>
+          <h2>Nickname: {user.nickname}</h2>
         </div>
         <div className="col-md text-center text-md-left">
-          <h2>{user.email}</h2>
+          <h2>Email: {user.email}</h2>
         </div>
       </div>
-      <img src={user.picture}
-            alt="Profile"
-            className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
-          />
+     
       <div className="row">
         <pre className="col-12 text-light bg-dark p-4">
           {JSON.stringify(user, null, 2)}
