@@ -23,7 +23,6 @@ const LoginDash = () => {
                 <img className="AniListImg" src={AniList} alt="First slide"></img> */}
              
             </div>
-            <Footer/>
         </div>
     )
 }

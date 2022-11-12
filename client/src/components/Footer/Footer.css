@@ -14,4 +14,7 @@
 footer{
     background-color: rgb(0, 0, 157);
     color: #fff;
+    left:0;
+    bottom: 0%;
+    width:100%;
 }

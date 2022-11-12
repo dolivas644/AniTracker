@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserInfo from './components/User/UserInfo';
 import HomeNav from './components/Nav/HomeNav';
 import { useState, useEffect } from 'react';
+import Footer from './components/Footer/Footer';
 function App() {
 
   const [theme, setTheme]=useState('light');
@@ -53,6 +54,7 @@ function App() {
     {!user ? <LoginDash/> : <Dashboard /> }
 
     </div>
+    <Footer/>
   </div>
   );
 }
