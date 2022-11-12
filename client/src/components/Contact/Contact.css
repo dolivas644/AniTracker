@@ -1,0 +1,43 @@
+.contactUs{
+    font-size: 40px;
+    text-align: center;
+}
+.con{
+    text-align: center;
+}
+form{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px;
+    overflow: hidden;
+}
+.btn {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(7, 22, 159);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px rgb(16, 16, 16);
+  }
+  
+  .btn:hover {background-color:  rgb(3, 13, 105)}
+  
+  .btn:active {
+    background-color:rgb(3, 13, 105);
+    box-shadow: 0 5px rgb(16, 16, 16);
+    transform: translateY(4px);
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px rgb(7, 7, 7);
+  }
