@@ -28,6 +28,7 @@ function App() {
   useEffect(() =>{
       document.body.className = theme;
   }, [theme])
+  
   const { isLoading } = useAuth0();
   const { user } = useAuth0();
   if (isLoading) {
