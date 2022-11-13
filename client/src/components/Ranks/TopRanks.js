@@ -16,13 +16,10 @@ const TopRanks = () => {
     
         setTopAnime(resData.data);
     }
-    useEffect(()=>{
-      getTopAnime()
-    },[])
+    // useEffect(()=>{
+    //   getTopAnime()
+    // },[])
 
-    const showAnime = () =>{
-        setSelected(<AnimeCard topAnime={topAnime}/>)
-    }
 
  //get top manga series based on popularity/ranking
 const [topManga, setTopManga]=useState([]);
@@ -35,23 +32,26 @@ const getTopManga=async()=>{
 }
 useEffect(()=>{
   getTopManga()
+  getTopAnime()
 },[])
-
-const showManga = () =>{
-    setSelected(<MangaCard topManga={topManga}/>)
-}
     return (
         <div className="buttonGroup">
 
                 <div >
-                    <button className='button-17' onClick={showAnime} >Anime</button>
-                    <button className='button-17' onClick={showManga}>Manga</button>
+                    <button className='button-17' onClick={() => setSelected("A")} >Anime</button>
+                    <button className='button-17' onClick={() => setSelected("B")}>Manga</button>
                     <button className='button-17'>People</button>
                     <button className='button-17' >Characters</button>
                     <button className='button-17'>Reviews</button>
                 </div>
                 <div className='rankContainer'>
-                  {selected}
+                  {/* {selected} */}
+                  {
+                    {
+                        A: <div> <AnimeCard topAnime={topAnime}/></div>,
+                        B:<div> <MangaCard topManga={topManga}/></div>
+                    }[selected]
+                  }
                 </div>
                
                 </div>
