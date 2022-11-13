@@ -10,6 +10,8 @@ const HomeNav = () => {
                 <li><Link to="/">Home</Link></li>
 
                 <li><Link to="/TopRanks">Top Rankings</Link></li>
+
+                <li><Link to="/Schedule">Schedule</Link></li>
                 
                 <li><Link to="/UserInfo">User Info</Link></li>
                 

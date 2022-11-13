@@ -14,6 +14,7 @@ import UserInfo from './components/User/UserInfo';
 import HomeNav from './components/Nav/HomeNav';
 import { useState, useEffect } from 'react';
 import Footer from './components/Footer/Footer';
+import Schedule from './components/Schedule/Schedule';
 function App() {
 
   const [theme, setTheme]=useState('light');
@@ -28,7 +29,7 @@ function App() {
   useEffect(() =>{
       document.body.className = theme;
   }, [theme])
-  
+
   const { isLoading } = useAuth0();
   const { user } = useAuth0();
   if (isLoading) {
@@ -46,6 +47,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/TopRanks' element={<TopRanks />}></Route>
+            <Route path='/Schedule' element={<Schedule/>}></Route>
             <Route path='/UserInfo' element={<UserInfo user={user}/>}></Route>
             <Route path='/Contact' element={<Contact />}></Route>
           </Routes>
