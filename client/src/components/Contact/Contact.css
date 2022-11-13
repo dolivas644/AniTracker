@@ -37,7 +37,8 @@ form{
   }
 
   a{
+    font-weight: 700;
     text-decoration: none;
-    color: white;
-    text-shadow: 2px 2px rgb(7, 7, 7);
+    color: rgb(4, 4, 4);
+    text-shadow: 2px 2px rgb(25, 22, 190);
   }
