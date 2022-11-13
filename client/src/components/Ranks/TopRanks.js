@@ -5,7 +5,7 @@ import MangaCard from './cards/MangaCard';
 import PeopleCard from './cards/PeopleCard';
 import CharacterCard from './cards/CharacterCard';
 import ReviewCard from './cards/ReviewCard';
-
+import './ranks.css'
 const TopRanks = () => {
     //toggleButton Feature 
     const [selected, setSelected]=useState('anime');
@@ -77,7 +77,7 @@ const contentContainer = () =>{
         return <CharacterCard topCharacter={topCharacter}/>
     }else if (selected === 'review'){
         return <ReviewCard topReview={topReview}/>
-    }else{
+    }else if(selected === null){
         return <AnimeCard topAnime={topAnime}/>
     }
 }
@@ -91,9 +91,13 @@ const contentContainer = () =>{
 
                 <div >
                     <button className='button-17' onClick={getTopAnime} >Anime</button>
+                    {' '}
                     <button className='button-17' onClick={getTopManga}>Manga</button>
+                    {' '}
                     <button className='button-17' onClick={getTopPeople}>People</button>
+                    {' '}
                     <button className='button-17' onClick={getTopCharacters}>Characters</button>
+                    {' '}
                     <button className='button-17' onClick={getTopReviews}>Reviews</button>
                 </div>
                 <div className='rankContainer'>
