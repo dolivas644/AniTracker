@@ -2,8 +2,8 @@ import React from 'react'
 
 const CharacterCard = ({ topCharacter }) => {
     return (
-        <div>
-            <h3>Top Characters</h3>
+        <div className='mapCard'>
+           
             {topCharacter.map(character => (
                 <>
                     <div class="flip-card">
@@ -20,9 +20,9 @@ const CharacterCard = ({ topCharacter }) => {
                                     rel="noreferrer">
                                     {character.name_kanji}
                                 </a>
-                                <p>{character.name_kanji}</p>
+                                {/* <p>{character.name_kanji}</p> */}
                                 <p>Nickname: {character.nicknames}</p>
-                                <p>Favorites: {character.fvaorites}</p>
+                                <p>Favorites: {character.favorites}</p>
                                 <p>About: {character.about}</p>
 
                             </div>

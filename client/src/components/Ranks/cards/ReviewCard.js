@@ -2,7 +2,7 @@ import React from 'react'
 
 const ReviewCard = ({ topReview }) => {
     return (
-        <div>
+        <div className='mapCard'>
             <h3>Top Reviews</h3>
             {topReview.map(review => (
                 <>

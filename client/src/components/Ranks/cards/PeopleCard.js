@@ -2,8 +2,7 @@ import React from 'react'
 
 const PeopleCard = ({ topPeople }) => {
     return (
-        <div>
-            <h3>Top People</h3>
+        <div className='mapCard'>
             {topPeople.map(people => (
                 <>
                     <div class="flip-card">

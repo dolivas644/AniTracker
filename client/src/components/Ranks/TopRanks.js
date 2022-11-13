@@ -5,6 +5,7 @@ import MangaCard from './cards/MangaCard';
 import PeopleCard from './cards/PeopleCard';
 import CharacterCard from './cards/CharacterCard';
 import ReviewCard from './cards/ReviewCard';
+
 const TopRanks = () => {
     //toggleButton Feature 
     const [selected, setSelected]=useState('anime');
@@ -64,7 +65,7 @@ const getTopManga=async()=>{
       setSelected('review')
   }
 
-
+//container for selected element to display 
 const contentContainer = () =>{
     if(selected === 'anime'){
         return <AnimeCard topAnime={topAnime}/>

@@ -2,8 +2,8 @@ import React from 'react'
 import './cards.css'
 const AnimeCard = ({ topAnime }) => {
     return (
-        <div>
-            <h3>Top Anime</h3>
+        <div className='mapCard'>
+        
             {topAnime.map(anime => (
                 <>
                     <div class="flip-card">

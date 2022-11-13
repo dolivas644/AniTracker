@@ -3,8 +3,8 @@ import React from 'react'
 const MangaCard = ({ topManga }) => {
 
     return (
-        <div>
-            <h3>Top Manga</h3>
+        <div className='mapCard'>
+            
             {topManga.map(manga => (
                 <>
                     <div class="flip-card">
