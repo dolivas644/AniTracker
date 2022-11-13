@@ -3,7 +3,8 @@ import { useState , useEffect} from 'react';
 import AnimeCard from './cards/AnimeCard';
 import MangaCard from './cards/MangaCard';
 import PeopleCard from './cards/PeopleCard';
-
+import CharacterCard from './cards/CharacterCard';
+import ReviewCard from './cards/ReviewCard';
 const TopRanks = () => {
     //toggleButton Feature 
     const [selected, setSelected]=useState('');
@@ -18,10 +19,6 @@ const TopRanks = () => {
         setTopAnime(resData.data);
         setSelected('anime')
     }
-    // useEffect(()=>{
-    //   getTopAnime()
-    // },[])
-
 
  //get top manga series based on popularity/ranking
 const [topManga, setTopManga]=useState([]);
@@ -34,7 +31,7 @@ const getTopManga=async()=>{
     setSelected('manga')
 }
 
-//  get top manga series based on popularity/ranking
+//  get top people series based on popularity/ranking
  const [topPeople, setTopPeople]=useState([]);
 
  const getTopPeople=async()=>{
@@ -44,6 +41,30 @@ const getTopManga=async()=>{
      setTopPeople(resData.data);
      setSelected('people')
  }
+
+ //  get top character series based on popularity/ranking
+ const [topCharacter, setTopCharacter]=useState([]);
+
+ const getTopCharacters=async()=>{
+     const res =await fetch(`https://api.jikan.moe/v4/top/characters`)
+     const resData =await res.json();
+ 
+     setTopCharacter(resData.data);
+     setSelected('character')
+ }
+
+  //  get top people series based on popularity/ranking
+  const [topReview, setTopReview]=useState([]);
+
+  const getTopReviews=async()=>{
+      const res =await fetch(`https://api.jikan.moe/v4/top/reviews`)
+      const resData =await res.json();
+  
+      setTopReview(resData.data);
+      setSelected('review')
+  }
+
+
 const contentContainer = () =>{
     if(selected === 'anime'){
         return <AnimeCard topAnime={topAnime}/>
@@ -51,6 +72,10 @@ const contentContainer = () =>{
         return <MangaCard topManga={topManga}/>
     }else if (selected === 'people'){
         return <PeopleCard topPeople={topPeople}/>
+    }else if (selected === 'character'){
+        return <CharacterCard topCharacter={topCharacter}/>
+    }else if (selected === 'review'){
+        return <ReviewCard topReview={topReview}/>
     }
 }
 // useEffect(()=>{
@@ -65,18 +90,10 @@ const contentContainer = () =>{
                     <button className='button-17' onClick={getTopAnime} >Anime</button>
                     <button className='button-17' onClick={getTopManga}>Manga</button>
                     <button className='button-17' onClick={getTopPeople}>People</button>
-                    <button className='button-17' >Characters</button>
-                    <button className='button-17'>Reviews</button>
+                    <button className='button-17' onClick={getTopCharacters}>Characters</button>
+                    <button className='button-17' onClick={getTopReviews}>Reviews</button>
                 </div>
                 <div className='rankContainer'>
-                  {/* {selected} */}
-                  {/* {
-                    {
-                        A: <div> <AnimeCard topAnime={topAnime}/></div>,
-                        B:<div> <MangaCard topManga={topManga}/></div>,
-                        // C:<div> <PeopleCard topPeople={topPeople}/></div>,
-                    }[selected]
-                  } */}
                   {contentContainer()}
                 </div>
                

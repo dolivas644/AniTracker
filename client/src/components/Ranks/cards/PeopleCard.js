@@ -10,7 +10,7 @@ const PeopleCard = ({ topPeople }) => {
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <h2>Name : {people.name}</h2>
-                                <img className='img' src={people.images.jpg.image_url} alt="icon"></img>
+                                <img className='imgCard-0' src={people.images.jpg.image_url} alt="icon"></img>
                             </div>
                             <div class="flip-card-back">
                                 <a

@@ -11,7 +11,7 @@ const MangaCard = ({ topManga }) => {
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <h2>Ranking : {manga.rank}</h2>
-                                <img className='img' src={manga.images.jpg.image_url} alt="icon"></img>
+                                <img className='imgCard-0' src={manga.images.jpg.image_url} alt="icon"></img>
                             </div>
                             <div class="flip-card-back">
                                 <a
@@ -22,11 +22,11 @@ const MangaCard = ({ topManga }) => {
                                     {manga.title}
                                 </a>
                                 <p>{manga.title_japanese}</p>
-                                <p>Rating: {manga.rating}</p>
-                                <p>Season: {manga.season}</p>
-                                <p>Year: {manga.year}</p>
-                                <p>Episodes: {manga.episodes}</p>
-                                <p>Duration: {manga.duration}</p>
+                                <p>Chapters: {manga.chapters}</p>
+                                <p>Volumes: {manga.volumes}</p>
+                                <p>Status: {manga.status}</p>
+                                <p>Synopsis: {manga.synopsis}</p>
+                                
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './cards.css'
 const AnimeCard = ({ topAnime }) => {
     return (
         <div>
@@ -10,7 +10,7 @@ const AnimeCard = ({ topAnime }) => {
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <h2>Ranking : {anime.rank}</h2>
-                                <img className='img' src={anime.images.jpg.image_url} alt="icon"></img>
+                                <img className='imgCard-0' src={anime.images.jpg.image_url} alt="icon"></img>
                             </div>
                             <div class="flip-card-back">
                                 <a
