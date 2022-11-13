@@ -21,9 +21,9 @@ const ReviewCard = ({ topReview }) => {
                                     {review.data.anime.title}
                                 </a>
                                 <p>{review.data.anime.url}</p>
-                                <p>Type: {review.data.birthday}</p>
-                                <p>Favorites: {review.data.type}</p>
-                                <p>Votes: {review.data.date}</p>
+                                <p>Type: {review.data.type}</p>
+                                <p>Date: {review.data.date}</p>
+                                <p>Votes: {review.data.votes}</p>
                                 <p>Review: {review.data.review}</p>
                             </div>
                         </div>

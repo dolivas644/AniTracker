@@ -7,7 +7,7 @@ import CharacterCard from './cards/CharacterCard';
 import ReviewCard from './cards/ReviewCard';
 const TopRanks = () => {
     //toggleButton Feature 
-    const [selected, setSelected]=useState('');
+    const [selected, setSelected]=useState('anime');
 
     //get top 25 anime series based on popularity/ranking
     const [topAnime, setTopAnime]=useState([]);
@@ -76,6 +76,8 @@ const contentContainer = () =>{
         return <CharacterCard topCharacter={topCharacter}/>
     }else if (selected === 'review'){
         return <ReviewCard topReview={topReview}/>
+    }else{
+        return <AnimeCard topAnime={topAnime}/>
     }
 }
 // useEffect(()=>{
