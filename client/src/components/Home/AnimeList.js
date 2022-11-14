@@ -1,0 +1,46 @@
+import React from 'react'
+
+export const AnimeList = ({ animelist, setAnimeInfo }) => {
+
+    /* make a post request 
+    add to list 
+    setList(...list, anime)
+    grab user info id & sub 
+
+    make POST to backend route
+    get response
+
+    onClick call request
+    */
+
+  return (
+    <>
+      {
+        animelist ? (
+          animelist.map((anime, index) => {
+            return (
+              <div className="card" key={index} onClick={() => setAnimeInfo(anime)}>
+                <img src={anime.images.jpg.large_image_url} alt="animeImage" />
+                <div className="anime-info">
+                  <h4>{anime.title}</h4>
+                  <div className="overlay">
+                    <h4>{anime.title_japanese}</h4>
+                    <h3>SYNOPSIS</h3>
+                    <div className="synopsis">
+                      <p>{anime.synopsis}</p>
+                    </div>
+                    <button>Add Anime to list</button>
+                  </div>
+
+                </div>
+              </div>
+            )
+          })
+        ) : "Not Found"
+      }
+
+    </>
+  )
+}
+
+export default AnimeList

@@ -14,6 +14,8 @@ const HomeNav = () => {
                 <li><Link to="/Schedule">Schedule</Link></li>
                 
                 <li><Link to="/UserInfo">User Info</Link></li>
+
+                <li><Link to="/MyAnimeList">My Anime List</Link></li>
                 
                 <li><Link to="/Contact">Contact</Link></li>
                 </ul>

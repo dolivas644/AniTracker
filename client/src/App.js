@@ -15,6 +15,7 @@ import HomeNav from './components/Nav/HomeNav';
 import { useState, useEffect } from 'react';
 import Footer from './components/Footer/Footer';
 import Schedule from './components/Schedule/Schedule';
+import MyAnimeList from './components/Mylist/MyAnimeList';
 function App() {
 
   const [theme, setTheme]=useState('light');
@@ -48,6 +49,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/TopRanks' element={<TopRanks />}></Route>
             <Route path='/Schedule' element={<Schedule/>}></Route>
+            <Route path='/MyAnimeList' element={<MyAnimeList/>}></Route>
             <Route path='/UserInfo' element={<UserInfo user={user}/>}></Route>
             <Route path='/Contact' element={<Contact />}></Route>
           </Routes>
