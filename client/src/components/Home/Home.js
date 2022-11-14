@@ -5,8 +5,7 @@ import AnimeList from './AnimeList'
 const Home = () => {
     const [search, setSearch] = useState('Naruto')
     const [animeData, setAnimeData] = useState();
-    const [animeInfo, setAnimeInfo] = useState()
-    const [myAnimeList, setMyAnimeList] = useState([])
+    // const [animeInfo, setAnimeInfo] = useState() *for side component*
 
     const getData = async () => {
         const res = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20`)
@@ -25,7 +24,7 @@ const Home = () => {
             </div>
             <AnimeList
                 animelist={animeData}
-                setAnimeInfo={setAnimeInfo}
+                // setAnimeInfo={setAnimeInfo} * for side component*
             />
 
         </div>
