@@ -81,11 +81,9 @@ const contentContainer = () =>{
         return <AnimeCard topAnime={topAnime}/>
     }
 }
-// useEffect(()=>{
-//   getTopManga()
-//   getTopAnime()
-//   getTopPeople()
-// },[])
+useEffect(()=>{
+  getTopAnime()
+},[])
     return (
         <div className="buttonGroup">
 

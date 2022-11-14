@@ -24,6 +24,7 @@ const Schedules = () => {
     }
   return (
     <div>
+        <h1>Currently Airing Anime</h1>
         <div>
             <label for="day">Choose the DAY </label>
             <select name="day" id='day' onChange={handleChange}>

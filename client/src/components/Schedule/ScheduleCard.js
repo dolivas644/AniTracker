@@ -2,8 +2,8 @@ import React from 'react'
 
 const ScheduleCard = ({season}) => {
     return (
+        
         <div className='mapCard'>
-            
             {season.map(anime => (
                 <>
                     <div className='row'>
@@ -12,7 +12,7 @@ const ScheduleCard = ({season}) => {
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front">
                                         <h2>{anime.title}</h2>
-                                        <img className='img' src={anime.images.jpg.image_url} alt="icon"></img>
+                                        <img className='imgCard-0' src={anime.images.jpg.image_url} alt="icon"></img>
                                     </div>
                                     <div class="flip-card-back">
                                         <a
@@ -23,11 +23,11 @@ const ScheduleCard = ({season}) => {
                                             {anime.title}
                                         </a>
                                         <p>{anime.title_japanese}</p>
-                                        <p>Rating: {anime.rating}</p>
-                                        <p>Season: {anime.season}</p>
-                                        <p>Year: {anime.year}</p>
-                                        <p>Episodes: {anime.episodes}</p>
+                                        <p>Status: {anime.status}</p>
                                         <p>Duration: {anime.duration}</p>
+                                        <p>Season: {anime.season}</p>
+                                        <p>Episodes: {anime.episodes}</p>
+                                        <p>Synopsis: {anime.synopsis}</p>
                                     </div>
                                 </div>
                             </div>
