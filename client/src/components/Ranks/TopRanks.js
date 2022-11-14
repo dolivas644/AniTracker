@@ -4,8 +4,8 @@ import AnimeCard from './cards/AnimeCard';
 import MangaCard from './cards/MangaCard';
 import PeopleCard from './cards/PeopleCard';
 import CharacterCard from './cards/CharacterCard';
-import ReviewCard from './cards/ReviewCard';
 import './ranks.css'
+
 const TopRanks = () => {
     //toggleButton Feature 
     const [selected, setSelected]=useState('anime');
@@ -54,17 +54,6 @@ const getTopManga=async()=>{
      setSelected('character')
  }
 
-  //  get top people series based on popularity/ranking
-  const [topReview, setTopReview]=useState([]);
-
-  const getTopReviews=async()=>{
-      const res =await fetch(`https://api.jikan.moe/v4/top/reviews`)
-      const resData =await res.json();
-  
-      setTopReview(resData.data);
-      setSelected('review')
-  }
-
 //container for selected element to display 
 const contentContainer = () =>{
     if(selected === 'anime'){
@@ -75,8 +64,6 @@ const contentContainer = () =>{
         return <PeopleCard topPeople={topPeople}/>
     }else if (selected === 'character'){
         return <CharacterCard topCharacter={topCharacter}/>
-    }else if (selected === 'review'){
-        return <ReviewCard topReview={topReview}/>
     }else if(selected === null){
         return <AnimeCard topAnime={topAnime}/>
     }
@@ -96,7 +83,7 @@ useEffect(()=>{
                     {' '}
                     <button className='button-17' onClick={getTopCharacters}>Characters</button>
                     {' '}
-                    <button className='button-17' onClick={getTopReviews}>Reviews</button>
+                    
                 </div>
                 <div className='rankContainer'>
                   {contentContainer()}
