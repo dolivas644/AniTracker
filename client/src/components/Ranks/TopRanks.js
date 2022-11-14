@@ -83,7 +83,6 @@ useEffect(()=>{
                     {' '}
                     <button className='button-17' onClick={getTopCharacters}>Characters</button>
                     {' '}
-                    
                 </div>
                 <div className='rankContainer'>
                   {contentContainer()}
