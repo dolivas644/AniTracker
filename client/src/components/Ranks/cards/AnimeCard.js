@@ -4,7 +4,7 @@ const AnimeCard = ({ topAnime }) => {
     return (
         <div className='mapCard'>
         
-            {topAnime.map(anime => (
+            {topAnime.map(anime=> (
                 <>
                     <div class="flip-card">
                         <div class="flip-card-inner">
