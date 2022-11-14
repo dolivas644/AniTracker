@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './schedule.css'
 const ScheduleCard = ({season}) => {
     return (
         
-        <div className='mapCard'>
+        <div className='mapCard2'>
             {season.map(anime => (
                 <>
                     <div className='row'>
