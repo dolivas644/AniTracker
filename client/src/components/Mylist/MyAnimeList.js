@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 const MyAnimeList = () => {
 const {user} = useAuth0();
@@ -18,21 +18,28 @@ const getSavedList = async () => {
   }
   console.log(userInfo);
 
-  const response = await fetch(`/myanimelist?sub=${user.sub}`)
+  const response = await fetch(`/animeList?sub=${user.sub}`)
    
   const content = await response.json();
   setList(content);
   console.log(content, "user content")
 }
    
+useEffect(()=>{
+  getSavedList()
+}
+,[])
+
+
   return (
     <div>
        <h1>My List</h1>
-       <div className='card'>
-        {list.map((anime, index)=>{
+       <div className='card-myList'>
+        {list.map((anime)=>{
           return(
             <>
             <h2>Title:</h2> 
+            <p>{anime.title}</p>
             <img src={anime.image}></img>
             </>
             
