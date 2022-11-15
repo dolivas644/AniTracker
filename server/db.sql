@@ -25,22 +25,20 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.anime (
-    id integer NOT NULL,
-    mal_id character varying,
-    image character varying,
+    mal_id integer NOT NULL,
     title text,
-    completed boolean
+    image text
 );
 
 
 ALTER TABLE public.anime OWNER TO tpl522_3;
 
 --
--- Name: anime_id_seq; Type: SEQUENCE; Schema: public; Owner: tpl522_3
+-- Name: anime_mal_id_seq; Type: SEQUENCE; Schema: public; Owner: tpl522_3
 --
 
-ALTER TABLE public.anime ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME public.anime_id_seq
+ALTER TABLE public.anime ALTER COLUMN mal_id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.anime_mal_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -56,7 +54,8 @@ ALTER TABLE public.anime ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 CREATE TABLE public.user_anime_list (
     id integer NOT NULL,
     user_id integer,
-    anime_id integer
+    anime_id integer,
+    complete boolean DEFAULT false
 );
 
 
@@ -109,15 +108,28 @@ ALTER TABLE public.users ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 -- Data for Name: anime; Type: TABLE DATA; Schema: public; Owner: tpl522_3
 --
 
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (32365, 'Boruto: Naruto the Movie - Naruto ga Hokage ni Natta Hi', 'https://cdn.myanimelist.net/images/anime/6/77678l.jpg');
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (42989, 'Magical Death', 'https://cdn.myanimelist.net/images/anime/1209/109527l.jpg');
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (53236, 'Road of Naruto', 'https://cdn.myanimelist.net/images/anime/1731/128787l.jpg');
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (1, 'Cowboy Bebop', 'https://cdn.myanimelist.net/images/anime/4/19644l.jpg');
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (10075, 'Naruto x UT', 'https://cdn.myanimelist.net/images/anime/3/30485l.jpg');
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (20, 'Naruto', 'https://cdn.myanimelist.net/images/anime/13/17405l.jpg');
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (28755, 'Boruto: Naruto the Movie', 'https://cdn.myanimelist.net/images/anime/4/78280l.jpg');
+INSERT INTO public.anime (mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES (2937, 'Bishoujo Senshi Sailor Moon R: Make Up! Sailor Senshi', 'https://cdn.myanimelist.net/images/anime/1822/117349l.jpg');
 
 
 --
 -- Data for Name: user_anime_list; Type: TABLE DATA; Schema: public; Owner: tpl522_3
 --
 
-INSERT INTO public.user_anime_list (id, user_id, anime_id) OVERRIDING SYSTEM VALUE VALUES (1, NULL, NULL);
-INSERT INTO public.user_anime_list (id, user_id, anime_id) OVERRIDING SYSTEM VALUE VALUES (2, NULL, NULL);
-INSERT INTO public.user_anime_list (id, user_id, anime_id) OVERRIDING SYSTEM VALUE VALUES (3, 1, 1);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (15, 5, 32365, NULL);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (16, 5, 42989, false);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (17, 1, 32365, false);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (18, 1, 53236, false);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (19, 1, 1, false);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (20, 1, 10075, false);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (21, 1, 20, false);
+INSERT INTO public.user_anime_list (id, user_id, anime_id, complete) OVERRIDING SYSTEM VALUE VALUES (22, 1, 28755, false);
 
 
 --
@@ -130,17 +142,17 @@ INSERT INTO public.users (id, name, picture, email, sub) OVERRIDING SYSTEM VALUE
 
 
 --
--- Name: anime_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tpl522_3
+-- Name: anime_mal_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tpl522_3
 --
 
-SELECT pg_catalog.setval('public.anime_id_seq', 1, false);
+SELECT pg_catalog.setval('public.anime_mal_id_seq', 1, false);
 
 
 --
 -- Name: user_anime_list_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tpl522_3
 --
 
-SELECT pg_catalog.setval('public.user_anime_list_id_seq', 4, true);
+SELECT pg_catalog.setval('public.user_anime_list_id_seq', 23, true);
 
 
 --
@@ -155,7 +167,7 @@ SELECT pg_catalog.setval('public.users_id_seq', 6, true);
 --
 
 ALTER TABLE ONLY public.anime
-    ADD CONSTRAINT anime_pkey PRIMARY KEY (id);
+    ADD CONSTRAINT anime_pkey PRIMARY KEY (mal_id);
 
 
 --
@@ -179,6 +191,14 @@ ALTER TABLE ONLY public.users
 --
 
 CREATE UNIQUE INDEX user_anime_unique ON public.user_anime_list USING btree (user_id, anime_id);
+
+
+--
+-- Name: user_anime_list user_anime_list_anime_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: tpl522_3
+--
+
+ALTER TABLE ONLY public.user_anime_list
+    ADD CONSTRAINT user_anime_list_anime_id_fkey FOREIGN KEY (anime_id) REFERENCES public.anime(mal_id);
 
 
 --
