@@ -1,7 +1,10 @@
 import React, { useState , useEffect} from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
+import './MyList.css';
+
 const MyAnimeList = () => {
 const {user} = useAuth0();
+
 /* make a get request for items in saved list
 fetch url ${user.sub}
 setLts(list)
@@ -38,9 +41,13 @@ useEffect(()=>{
         {list.map((anime)=>{
           return(
             <>
-            <h2>Title:</h2> 
-            <p>{anime.title}</p>
-            <img src={anime.image}></img>
+            <div className='card-list'>
+            <h5>{anime.title}</h5> 
+            <img className='cardListImg' src={anime.image}></img>
+            <br></br>
+            <button className='button-delete'>Remove from List</button>
+            <button className='button-delete'>Completed</button>
+            </div>
             </>
             
           )
