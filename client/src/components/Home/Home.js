@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import AnimeList from './AnimeList'
-
+import './Home.css'
 const Home = () => {
     const [search, setSearch] = useState('Naruto')
     const [animeData, setAnimeData] = useState();
@@ -19,7 +19,7 @@ const Home = () => {
     return (
         <div>
             <div className="search-box">
-                <input type="search" placeholder="Search your anime"
+                <input type="search" placeholder="Search for anime"
                     onChange={(e) => setSearch(e.target.value)} />
             </div>
             <AnimeList
