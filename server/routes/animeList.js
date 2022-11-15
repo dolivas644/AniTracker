@@ -4,3 +4,20 @@ const router = express.Router();
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+
+router.get('/', async (req, res) => {
+    const sub = req.query.sub;
+    const userSub = `SELECT id FROM users WHERE sub =$1`;
+    const subInfo = await db.query(userSub, [sub])
+    console.log(subInfo, "Finds respective user id from given sub");
+    const user_id = subInfo[0].id;
+  
+    try {
+      const itemList = await db.any(`SELECT * FROM anime WHERE user_id=$1`, [user_id]);
+      res.send(itemList);
+    } catch (e) {
+      console.log(e);
+      return res.status(400).json(e);
+    }
+  })
+export default router;

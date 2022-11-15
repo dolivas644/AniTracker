@@ -13,14 +13,23 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
 
   onClick call request
   */
-  const addToList = async (anime_id) => {
+  const addToList = async (anime_id, title, image) => {
     //grab user info from auth0 id & sub
     const userInfo = {
       sub: user.sub,
       //pass as an argument
       anime_id: anime_id
     }
+    const animeInfo={
+      anime_id: anime_id,
+      title: title,
+      image:image
+    }
     console.log(userInfo);
+    console.log(animeInfo);
+//grabs both userInfo and animeInfo
+    const userAnimeInfo = {user:userInfo, anime:animeInfo};
+    console.log(userAnimeInfo)
 
     const response = await fetch('/myanimelist', {
       method: 'POST',
@@ -28,7 +37,7 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
         Accept: 'application/json',
         'Content-type': 'application/json'
       },
-      body: JSON.stringify(userInfo)
+      body: JSON.stringify(userAnimeInfo)
     });
     const content = await response.json();
     console.log(content, "user content")
@@ -36,8 +45,10 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
 
   return (
     <>
+    <div className='mapCard'>
       {
         animelist ? (
+          
           animelist.map((anime, index) => {
             return (
               <div className="card" key={index} >
@@ -50,16 +61,17 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
                     <div className="synopsis">
                       <p>{anime.synopsis}</p>
                     </div>
-                    <button onClick={() => addToList(anime.mal_id)}>Add Anime to list</button>
+                    <button onClick={() => addToList(anime.mal_id, anime.title, anime.images.jpg.large_image_url)}>Add Anime to list</button>
                   </div>
 
                 </div>
               </div>
             )
           })
+          
         ) : "Not Found"
       }
-
+</div>
     </>
   )
 }

@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyparser from 'body-parser';
 import path from "path";
 import { fileURLToPath } from "url";
-
+import animeListRouter from "./routes/animeList.js"
 import usersRouter from "./routes/newUsers.js";
 import animeListItemRouter from "./routes/animeListItem.js"
 
@@ -21,6 +21,7 @@ app.use(express.static(REACT_BUILD_DIR));;
 
 app.use("/me", usersRouter);
 app.use("/myanimelist", animeListItemRouter);
+app.use("/animeList", animeListRouter)
 
 app.get("/", function(req, res) {
     res.json("Working request")
