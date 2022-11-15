@@ -55,6 +55,8 @@ router.post('/', async (req, res) => {
   res.json(result)
 });
 
+//concept: remove row in user_anime_list based on id
+//user to remove item from their list
 router.delete('/:id', async (req, res) => {
   //delete anime from user_anime_list based on id
 const animeItem = req.params.id
