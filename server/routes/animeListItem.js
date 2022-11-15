@@ -56,7 +56,7 @@ router.post('/', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-  //delete anime from user list based on id
+  //delete anime from user_anime_list based on id
 const animeItem = req.params.id
   try {
     await db.none(`DELETE FROM user_anime_list WHERE id=$1`, [animeItem]);
