@@ -55,5 +55,16 @@ router.post('/', async (req, res) => {
   res.json(result)
 });
 
+router.delete('/:id', async (req, res) => {
+  //delete anime from user list based on id
+const animeItem = req.params.id
+  try {
+    await db.none(`DELETE FROM user_anime_list WHERE id=$1`, [animeItem]);
+    res.send({status:'success'});
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json(e);
+  }
+})
 
 export default router;
