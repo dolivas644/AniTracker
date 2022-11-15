@@ -28,7 +28,7 @@ const getSavedList = async () => {
   console.log(content, "user content")
 }
 
-//users wants to remove list item based on id
+//users wants to remove list item based on id (row)
 const deleteItem = async(handleDeleteAnime) =>{
 const response = await fetch(`/myanimelist/${handleDeleteAnime}`,{
   method: 'DELETE',

@@ -3,7 +3,7 @@ import express from "express";
 const router = express.Router();
 import * as dotenv from 'dotenv';
 dotenv.config();
-
+//query practice
 /*SELECT a.*, u.complete
 FROM anime as a
 JOIN user_anime_list as u
