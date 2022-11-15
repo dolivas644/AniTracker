@@ -41,6 +41,7 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
     });
     const content = await response.json();
     console.log(content, "user content")
+    alert('Anime was added to your list');
   }
 
   return (
@@ -63,7 +64,7 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
                      <div className="synopsis">
                       <p>{anime.synopsis}</p>
                     </div>
-                    <button onClick={() => addToList(anime.mal_id, anime.title, anime.images.jpg.large_image_url)}>Add Anime to list</button>
+                    <button className='button-add'onClick={() => addToList(anime.mal_id, anime.title, anime.images.jpg.large_image_url)}>Add Anime to list</button>
                   </div>
 
                 </div>
