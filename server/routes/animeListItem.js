@@ -74,6 +74,8 @@ const animeItem = req.params.id;
 router.put('/:id', async (req, res) => {
   //delete anime from user_anime_list based on id
 const animeItem = req.params.id;
+const content = req.body.complete;
+
   try {
     await db.none(`UPDATE user_anime_list SET complete = true WHERE id=$1`, [animeItem]);
     res.send({status:'success'});
