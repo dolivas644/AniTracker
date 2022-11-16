@@ -1,2 +1,2 @@
 # AniTracker
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[logo]: https://github.com/dolivas644/AniTracker/blob/main/client/src/components/Images/Head.png?raw=true "Anime Tracker"
