@@ -5,14 +5,6 @@ import CompletedList from './CompletedList';
 
 const MyAnimeList = () => {
   const { user } = useAuth0();
-
-  /* make a get request for items in saved list
-  fetch url ${user.sub}
-  setLts(list)
-  
-  useEffect for authentication
-  */
-
   const [list, setList] = useState([])
 
   //currently watch list complete=false
@@ -55,7 +47,7 @@ const MyAnimeList = () => {
     const content = await response.json();
     console.log(content, "update false to true")
   }
-
+//add completed list? tried and didnt change
   useEffect(() => {
     getSavedList()
   }
@@ -75,7 +67,7 @@ const MyAnimeList = () => {
                   <img className='cardListImg' src={anime.image}></img>
                   <br></br>
                   <button className='button-delete' onClick={() => deleteItem(anime.list_id)}>Remove from List</button>
-                  <button className='button-delete' onClick={() => completedItem(anime.list_id)} >Completed</button>
+                  <button className='button-delete' onClick={() => completedItem(anime.list_id)} >Mark Completed</button>
                 </div>
               </>
 
