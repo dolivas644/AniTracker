@@ -3,12 +3,7 @@ import express from "express";
 const router = express.Router();
 import * as dotenv from 'dotenv';
 dotenv.config();
-//query practice
-/*SELECT a.*, u.complete
-FROM anime as a
-JOIN user_anime_list as u
-ON a.mal_id = u.anime_id
-WHERE u.user_id=5;*/
+
 
 router.get('/', async (req, res) => {
     const sub = req.query.sub;
@@ -17,7 +12,7 @@ router.get('/', async (req, res) => {
     console.log(subInfo, "Finds respective user id from given sub");
     const user_id = subInfo[0].id;
     try {
-      const itemList = await db.any(`SELECT a.*, u.complete=false, u.id as list_id FROM anime as a JOIN user_anime_list as u ON a.mal_id = u.anime_id WHERE u.user_id=$1`, [user_id]);
+      const itemList = await db.any(`SELECT a.*, u.complete, u.id as list_id FROM anime as a JOIN user_anime_list as u ON a.mal_id = u.anime_id WHERE u.user_id=$1`, [user_id]);
       res.send(itemList);
     } catch (e) {
       console.log(e);
