@@ -28,12 +28,13 @@ const getSavedList = async () => {
   console.log(content, "user content")
 }
 
+//users wants to remove list item based on id (row)
 const deleteItem = async(handleDeleteAnime) =>{
 const response = await fetch(`/myanimelist/${handleDeleteAnime}`,{
   method: 'DELETE',
-})
+});
 await response.json();
-const deleteItemFun = list.filter((anime) => anime.id !==handleDeleteAnime)
+const deleteItemFun = list.filter((anime) => anime.list_id !== handleDeleteAnime);
 setList(deleteItemFun);
 }
    
@@ -54,7 +55,7 @@ useEffect(()=>{
             <h5>{anime.title}</h5> 
             <img className='cardListImg' src={anime.image}></img>
             <br></br>
-            <button className='button-delete' onClick={()=>deleteItem(anime.id)}>Remove from List</button>
+            <button className='button-delete' onClick={()=>deleteItem(anime.list_id)}>Remove from List</button>
             <button className='button-delete'>Completed</button>
             </div>
             </>
