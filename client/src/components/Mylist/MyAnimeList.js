@@ -37,6 +37,23 @@ await response.json();
 const deleteItemFun = list.filter((anime) => anime.list_id !== handleDeleteAnime);
 setList(deleteItemFun);
 }
+
+//users wants to remove list item based on id (row)
+const completedItem = async() =>{
+  const completion = {
+    complete: true
+  }
+  const response = await fetch(`/myanimelist${anime.list_id}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify({completion})
+  });
+  const content = await response.json();
+  console.log(content, "user content")
+}
    
 useEffect(()=>{
   getSavedList()
@@ -56,7 +73,7 @@ useEffect(()=>{
             <img className='cardListImg' src={anime.image}></img>
             <br></br>
             <button className='button-delete' onClick={()=>deleteItem(anime.list_id)}>Remove from List</button>
-            <button className='button-delete'>Completed</button>
+            <button className='button-delete' onClick={() => completedItem(anime.list_id)}>Completed</button>
             </div>
             </>
             

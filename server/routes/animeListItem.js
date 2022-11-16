@@ -69,4 +69,18 @@ const animeItem = req.params.id;
   }
 })
 
+//concept: remove row in user_anime_list based on id
+//user to remove item from their list
+router.put('/:id', async (req, res) => {
+  //delete anime from user_anime_list based on id
+const animeItem = req.params.id;
+  try {
+    await db.none(`UPDATE user_anime_list SET complete = true WHERE id=$1`, [animeItem]);
+    res.send({status:'success'});
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json(e);
+  }
+})
+
 export default router;
