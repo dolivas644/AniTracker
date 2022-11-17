@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import './MyList.css';
 import { useState, useEffect } from 'react';
+
 const CompletedList = () => {
     const { user } = useAuth0();
     const [list, setList] = useState([])
