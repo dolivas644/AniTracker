@@ -1,18 +1,10 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import React from 'react'
-
+import React, { useState } from 'react'
+import AnimePage from './AnimePage';
+import {Link} from "react-router-dom";
 export const AnimeList = ({ animelist, setAnimeInfo }) => {
   const { user } = useAuth0();
-  /* make a post request 
-  add to list 
-  setList(...list, anime)
-  grab user info id & sub 
 
-  make POST to backend route
-  get response
-
-  onClick call request
-  */
   const addToList = async (anime_id, title, image) => {
     //grab user info from auth0 id & sub
     const userInfo = {
@@ -43,7 +35,6 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
     console.log(content, "user content")
     // alert('Anime was added to your list');
   }
-
   return (
     <>
     <div className='mapCard'>
@@ -57,8 +48,7 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
                 <div className="anime-info">
                   <h4>{anime.title}</h4>
                   <div className="overlay">
-                  <br></br>
-                  <br></br>
+                  <Link className='button' to={`/AnimePage/${anime.mal_id}`}>Get Anime Info</Link>
                     <h4>{anime.title_japanese}</h4>
                     <h3>SYNOPSIS</h3> 
                      <div className="synopsis">
