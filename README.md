@@ -1,7 +1,7 @@
 # AniTracker
 <img src="https://github.com/dolivas644/AniTracker/blob/main/client/src/components/Images/Head.png?raw=true">
 <h2> Why use Anime Tracker? - App Overview </h2>
-  ANIME TRACKER is an application is an application for users that have an interest in anime and are looking to keep track of what they are currently watching and have completed. With the rise in popularity of anime, the frequent release of anime makes it difficult to keep track of the current and past anime schedule. 
+  ANIME TRACKER is an application for users that have an interest in anime and are looking to keep track of what they are currently watching and have completed. With the rise in popularity of anime, the frequent release of anime makes it difficult to keep track of the current and past anime schedule. 
 <h3> Goal for users </h3>
   <ol>
   <li> Keep track of anime (Currently watching & completed)</li>
