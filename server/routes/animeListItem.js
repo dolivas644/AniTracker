@@ -5,10 +5,14 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 router.get('/', async (req, res) => {
+  //sub is the value we want from auth0
   const sub = req.query.sub;
+  //grabbing users id if the sub value matches the sub value from auth0
   const userSub = `SELECT id FROM users WHERE sub =$1`;
+  //we are passing the sub from auth0 to our query
   const subInfo = await db.query(userSub, [sub])
   console.log(subInfo, "Finds respective user id from given sub");
+  //we are saving the targetd id as user_id
   const user_id = subInfo[0].id;
 
   try {
