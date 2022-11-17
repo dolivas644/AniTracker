@@ -16,6 +16,7 @@ import { useState, useEffect } from 'react';
 import Footer from './components/Footer/Footer';
 import Schedule from './components/Schedule/Schedule';
 import MyAnimeList from './components/Mylist/MyAnimeList';
+import AnimePage from './components/Home/AnimePage';
 function App() {
 
   const [theme, setTheme]=useState('light');
@@ -52,6 +53,8 @@ function App() {
             <Route path='/MyAnimeList' element={<MyAnimeList/>}></Route>
             <Route path='/UserInfo' element={<UserInfo user={user}/>}></Route>
             <Route path='/Contact' element={<Contact />}></Route>
+          <Route path='/AnimePage/:mal_id' element={<AnimePage />}></Route>
+
           </Routes>
         </Router> }
       </div>
