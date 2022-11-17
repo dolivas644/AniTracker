@@ -121,7 +121,7 @@ Clone the repo:<br>
 <br>To clean your folder from the owner git, run the command:
 <br><code>rm -rf .git</code>
 <br>Run the command to start your directory:
-<code>git init</code>
+<br><code>git init</code>
 <br>Go to the server folder in the project:
 <br><code>cd server</code>
 <br>Install all NPM packages using this in the root directory:
