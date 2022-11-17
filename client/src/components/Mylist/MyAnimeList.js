@@ -47,11 +47,14 @@ const MyAnimeList = () => {
     const content = await response.json();
     console.log(content, "update false to true")
   }
-//add completed list? tried and didnt change
-  useEffect(() => {
-    getSavedList()
-  }
-    , [])
+
+
+ 
+
+    //useffect for completed
+    useEffect(() => {
+      getSavedList()
+    })
 
 
   return (
@@ -77,7 +80,7 @@ const MyAnimeList = () => {
       </div>
       <div className='column'>
         <h1>Completed</h1>
-        <CompletedList />
+        <CompletedList list={list}/>
       </div>
 
 

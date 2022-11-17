@@ -20,10 +20,10 @@ const getCompleteList = async () => {
     setList(content);
     console.log(content, "user content")
   }
-  //useffect for completed list
+  //useffect for completed
   useEffect(() => {
    getCompleteList()
-  }, [])
+  })
 
   return (
     <div>
