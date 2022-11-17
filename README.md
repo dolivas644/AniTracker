@@ -104,7 +104,7 @@
     <td>Integer (Foreign Key: user.id)</td>
     <td>Integer (Foreign Key: anime.mal_id)</td>
     <td>Boolean</td>
-  </tr>500px
+  </tr>
 </table>
 <h5>Original Schema</h5>
 <img src="https://i.postimg.cc/1z77NQ27/Screenshot-20221116-081806.png)](https://postimg.cc/67RfDD9C">
