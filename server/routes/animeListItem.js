@@ -14,7 +14,6 @@ router.get('/', async (req, res) => {
   console.log(subInfo, "Finds respective user id from given sub");
   //we are saving the targetd id as user_id
   const user_id = subInfo[0].id;
-
   try {
     const itemList = await db.any(`SELECT * FROM user_anime_list WHERE user_id=$1`, [user_id]);
     res.send(itemList);
