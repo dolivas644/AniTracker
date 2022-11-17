@@ -1,0 +1,23 @@
+.anime-info{
+    display: flex;
+text-align: center;
+color:black;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: medium;
+}
+.anime-info-img{
+    height:300px;
+}
+.info-box{
+    color:black
+}
+
+.section-box{
+    color:black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    display:block;
+}
+.infoSec{
+    display: flex;
+}
