@@ -41,7 +41,7 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
     });
     const content = await response.json();
     console.log(content, "user content")
-    alert('Anime was added to your list');
+    // alert('Anime was added to your list');
   }
 
   return (
