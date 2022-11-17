@@ -116,6 +116,7 @@
 I strongly recommend using a Node version manager like <a href="https://www.w3schools.com](https://github.com/nvm-sh/nvm"></a> 
 To install Node.js and npm 
 <h3>Install</h3>
+*Disclaimer: The app uses Auth0 and requires an Auth0 domain + ClientId to use. As wellas email JS, which requires an emailJS account: service id, domain id and template id*<br>
 Clone the repo:<br>
 <br><code>https://github.com/dolivas644/AniTracker.git</code>
 <br>To clean your folder from the owner git, run the command:
