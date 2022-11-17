@@ -117,13 +117,13 @@ I strongly recommend using a Node version manager like <a href="https://www.w3sc
 To install Node.js and npm 
 <h3>Install</h3>
 Clone the repo:<br>
-<code>https://github.com/dolivas644/AniTracker.git</code>
+<br><code>https://github.com/dolivas644/AniTracker.git</code>
 <br>To clean your folder from the owner git, run the command:
-<code>rm -rf .git</code>
+<br><code>rm -rf .git</code>
 <br>Run the command to start your directory:
 <code>git init</code>
 <br>Go to the server folder in the project:
-<code>cd server</code>
+<br><code>cd server</code>
 <br>Install all NPM packages using this in the root directory:
 <br><code>npm install</code>
 <br>Inside your server folder, create an .env file with:
