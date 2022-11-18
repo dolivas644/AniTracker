@@ -39,12 +39,19 @@ router.post('/', async (req, res) => {
     const valueAnime = [listItem.anime_id]
     const resultsAnime = await db.query(animeId, valueAnime);
 
+      //if anime info DNE insert info to anime table
+//   if (resultsAnime.length < 1) {
+//     const query = `INSERT into anime(mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES($1, $2, $3) RETURNING mal_id`;
+//     const values = [listItem.anime_id, listItem.title, listItem.image]
+//     const result = await db.query(query, values)
+//     console.log(result);
+//   }
     //query adds info to the junction table containing user_id & anime_id
     const query = 'INSERT INTO comment("Text", "user_id", "anime_id") VALUES($1, $2, $3) RETURNING *'
-    const values = [user_id, listItem.anime_id, listItem.Text]
+    const values = [listItem.Text, user_id, listItem.anime_id,]
     const result = await db.query(query, values);
     console.log(result);
-    res.json(result)
+    res.status(201).json(result);
 });
 
 export default router;
