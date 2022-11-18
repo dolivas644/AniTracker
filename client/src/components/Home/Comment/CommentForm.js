@@ -1,17 +1,21 @@
 import React from 'react'
 import './Comment.css'
 import { useState, useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import CommentBox from './CommentBox';
+
 
 const CommentForm = ({ mal_id }) => {
+const {user} = useAuth0();
 
     const [comment, setComment] = useState('');
 
     const getComments = async () => {
-
         const response = await fetch(`/comments?anime_id=${mal_id}`)
         const content = await response.json();
         setComment(content);
     }
+
 
     useEffect(() => {
         getComments()
@@ -21,16 +25,7 @@ const CommentForm = ({ mal_id }) => {
     }
     return (
         <div>
-            <div className='commentSection'>
-                <div className='top-bar'>
-                    <h2>Comments:</h2></div>
-                <form>
-                    <label>Enter your comment:
-                        <input type="text" comment="comment" />
-                    </label>
-                    <input type="submit" value="Submit"></input>
-                </form>
-            </div>
+           <CommentBox mal_id={mal_id}/>
             <div className='mapComments'>
                 {comment.map(comment => {
                     return (
