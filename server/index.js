@@ -7,6 +7,7 @@ import animeListRouter from "./routes/animeList.js"
 import usersRouter from "./routes/newUsers.js";
 import animeListItemRouter from "./routes/animeListItem.js"
 import completedListRouter from "./routes/completedList.js"
+import commentsRouter from "./routes/comments.js"
 
 const app = express();
 const PORT = 8080;
@@ -24,6 +25,7 @@ app.use("/me", usersRouter);
 app.use("/myanimelist", animeListItemRouter);
 app.use("/animeList", animeListRouter)
 app.use("/completedList", completedListRouter);
+app.use("/comments", commentsRouter);
 
 app.get("/", function(req, res) {
     res.json("Working request")

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './AnimePage.css';
 import Youtube from 'react-youtube';
-
+import CommentForm from './Comment/CommentForm';
 const AnimePage = () => {
   let { mal_id } = useParams();
 
@@ -17,6 +17,7 @@ const AnimePage = () => {
 
   useEffect(() => {
     getData()
+
   }, [mal_id])
   if (!animeData) {
     return 'Is Loading . . .'
@@ -195,12 +196,9 @@ const AnimePage = () => {
             </div>
             </div>
         </div>
-
-
-
-
+    
       </div>
-
+      <CommentForm mal_id={mal_id}/>
     </div>
   )
 }
