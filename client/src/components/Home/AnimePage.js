@@ -17,6 +17,7 @@ const AnimePage = () => {
 
   useEffect(() => {
     getData()
+
   }, [mal_id])
   if (!animeData) {
     return 'Is Loading . . .'
@@ -197,7 +198,7 @@ const AnimePage = () => {
         </div>
     
       </div>
-      <CommentForm />
+      <CommentForm mal_id={mal_id}/>
     </div>
   )
 }

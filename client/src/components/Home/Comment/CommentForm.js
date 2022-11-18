@@ -1,10 +1,24 @@
 import React from 'react'
 import './Comment.css'
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 
-const CommentForm = () => {
+const CommentForm = ({mal_id}) => {
+    
 const [comment, setComment] = useState('');
 
+const getComments = async () =>{
+
+    const response = await fetch(`/comments?anime_id=${mal_id}`)
+    const content = await response.json();
+    setComment(content);
+}
+
+useEffect(()=>{
+    getComments()
+},[mal_id])
+if(!comment){
+    return 'loading comments . . .'
+}
   return (
     <div>
         <div className='commentSection'>
@@ -18,7 +32,13 @@ const [comment, setComment] = useState('');
                 </form>
         </div>
       <div className='mapComments'>
-
+{comment.map(comment =>{
+    return(
+        <>
+        <p>{comment.Text}</p>
+        </>
+    )
+})}
       </div>
     </div>
   )
