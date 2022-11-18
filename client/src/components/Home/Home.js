@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import AnimeList from './AnimeList'
 import './Home.css'
+
 const Home = () => {
     const [search, setSearch] = useState('Naruto')
     const [animeData, setAnimeData] = useState();

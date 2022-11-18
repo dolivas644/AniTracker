@@ -2,6 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import React, { useState } from 'react'
 import AnimePage from './AnimePage';
 import {Link} from "react-router-dom";
+
 export const AnimeList = ({ animelist, setAnimeInfo }) => {
   const { user } = useAuth0();
 
@@ -62,7 +63,13 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
             )
           })
           
-        ) : "Not Found"
+        ) : <div className='randomBox'>
+          <h2>You anime is NOT found. You can choose a random one</h2>
+          <div>
+            <button>Get Random Anime</button>
+          </div>
+        </div>
+
       }
 </div>
     </>
