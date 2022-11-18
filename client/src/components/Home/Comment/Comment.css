@@ -7,3 +7,9 @@
 .mapComments{
     color:black;
 }
+.user-comment{
+    display: block;
+}
+.comment{
+    display: flex;
+}
