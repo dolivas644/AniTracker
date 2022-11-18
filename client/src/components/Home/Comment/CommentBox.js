@@ -1,48 +1,48 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react';
+import { useState, useEffect } from 'react';
 
+const CommentBox = ({ mal_id }) => {
+    const { user } = useAuth0();
+    const [text, setText] = ('');
 
-const CommentBox = ({mal_id}) => {
-    const {user} = useAuth0();
+    const addComment = async (Text) => {
+        const commentInfo = {
+            Text: Text,
+            anime: { anime_id: mal_id },
+            user: { sub: user.sub }
+        }
+        const userFormInfo = { comment: commentInfo };
+        console.log(userFormInfo)
 
-    // const addComment = async(Text, ) =>{
-    //     //grab user info from auth0
-    //     const userInfo ={
-    //         sub:user.sub
-    //     }
-    //     const formInfo ={
-    //         Text: Text,
-    //     }
-    //     const userFormInfo = {user:userInfo, form:formInfo};
-    // console.log(userFormInfo)
+        const response = await fetch(`/comments`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(userFormInfo)
+        });
+        const content = await response.json();
+        console.log(content, "user content")
+        setText('');
+    }
 
-    //     const response = await fetch(`/comments?anime_id=${mal_id}`, {
-    //         method: 'POST',
-    //         headers: {
-    //           Accept: 'application/json',
-    //           'Content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(userFormInfo)
-    //       });
-    //       const content = await response.json();
-    //       console.log(content, "user content")
-    // }
-
-  return (
-    <div>
-        <div className='commentSection'>
+    return (
+        <div>
+            <div className='commentSection'>
                 <div className='top-bar'>
                     <h2>Comments:</h2></div>
                 <form>
                     <label>Enter your comment:
-                        <input type="text" comment="comment" />
+                        <input type="text" value={text} onChange={((e) => setText(e.target.value))} />
                     </label>
-                    <input type="submit" value="Submit"></input>
+                    <input type="submit" value="Submit" onClick={(() => addComment(mal_id))}></input>
                 </form>
             </div>
-      
-    </div>
-  )
+
+        </div>
+    )
 }
 
 export default CommentBox
