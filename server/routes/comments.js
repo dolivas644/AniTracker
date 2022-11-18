@@ -5,32 +5,39 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 router.get('/', async (req, res) => {
-  const anime_id= req.query.anime_id;
-      try {
+    const anime_id = req.query.anime_id;
+    try {
         const itemList = await db.any(`SELECT comment.*, users.name, users.picture FROM comment JOIN users ON comment.user_id=users.id WHERE anime_id=$1`, [anime_id]);
         res.send(itemList);
-      } catch (e) {
+    } catch (e) {
         console.log(e);
         return res.status(400).json(e);
-      }
-    })
-  
+    }
+})
 
-    //comment_id , text, user_id , anime_id
-    // INSERT INTO comment("Text", "user_id", "anime_id") VALUES('AHHHHH', 1, 322)
+
+//comment_id , text, user_id , anime_id
+// INSERT INTO comment("Text", "user_id", "anime_id") VALUES('AHHHHH', 1, 322)
 router.post('/', async (req, res) => {
     const listItem = {
-      sub: req.body.user.sub,
-      Text: req.body.Text,
-      anime_id: req.body.anime_id
+        //   sub: req.body.user.sub,
+        Text: req.body.Text,
+        sub: req.body.user.sub,
+        anime_id: req.body.anime.anime_id,
+        //   user_id: req.body.user_id
     }
     console.log(listItem);
-  
-    // select id from users where sub == sub
+
+    //select id from users where sub == sub
     const userSub = `SELECT id FROM users WHERE sub =$1`;
     const subInfo = await db.query(userSub, [listItem.sub])
     console.log(subInfo, "Finds respective user id from given sub");
     const user_id = subInfo[0].id;
+
+    //select anime_id from animelist if it exists
+    const animeId = `SELECT mal_id FROM anime WHERE mal_id=$1 LIMIT 1`;
+    const valueAnime = [listItem.anime_id]
+    const resultsAnime = await db.query(animeId, valueAnime);
 
     //query adds info to the junction table containing user_id & anime_id
     const query = 'INSERT INTO comment("Text", "user_id", "anime_id") VALUES($1, $2, $3) RETURNING *'
@@ -38,6 +45,6 @@ router.post('/', async (req, res) => {
     const result = await db.query(query, values);
     console.log(result);
     res.json(result)
-  });
+});
 
 export default router;
