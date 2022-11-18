@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 
 const CommentBox = ({ mal_id }) => {
     const { user } = useAuth0();
-    const [text, setText] = ('');
+    const [text, setText] = useState('');
 
-    const addComment = async (Text) => {
+    const addComment = async () => {
         const commentInfo = {
             Text: Text,
             anime: { anime_id: mal_id },
@@ -37,10 +37,9 @@ const CommentBox = ({ mal_id }) => {
                     <label>Enter your comment:
                         <input type="text" value={text} onChange={((e) => setText(e.target.value))} />
                     </label>
-                    <input type="submit" value="Submit" onClick={(() => addComment(mal_id))}></input>
+                    <input type="submit" value="Submit" onClick={(() => addComment())}></input>
                 </form>
             </div>
-
         </div>
     )
 }
