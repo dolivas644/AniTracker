@@ -8,7 +8,7 @@ const CommentBox = ({ mal_id }) => {
 
     const addComment = async () => {
         const commentInfo = {
-            Text: Text,
+            Text: text,
             anime: { anime_id: mal_id },
             user: { sub: user.sub }
         }
@@ -21,7 +21,7 @@ const CommentBox = ({ mal_id }) => {
                 Accept: 'application/json',
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(userFormInfo)
+            body: JSON.stringify(commentInfo)
         });
         const content = await response.json();
         console.log(content, "user content")
