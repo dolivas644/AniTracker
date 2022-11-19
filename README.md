@@ -49,10 +49,13 @@
   <li>Allow users to remove anime from watchlist</li>
   <li>Get top rankings from different categories</li>
 </ul>
+<h3>Tier 3</h3>
+<ul>
+<li>Allow users to comment on anime pages</li>
+</ul>
 <h4>Future additions</h4>
 <ul>
   <li>Allow users to rate anime in their list</li>
-  <li>Allow users to comment on anime pages</li>
   <li>Allow users to make their own custom lists</li>
 </ul>
 <h3>Technical Risks</h3>
