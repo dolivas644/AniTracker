@@ -17,7 +17,7 @@ export default function Contact() {
         <div>
             <div className='left'>
                 <div className='con'>
-                    <h1 className='contactUs'>Contact Us</h1>
+                    <h1 className='contactUs' data-test-id='contact-blurb'>Contact Us</h1>
                     <p>Need to get in touch with us?
                         Are any of the following issues a concern?
                         <br></br>
@@ -86,7 +86,7 @@ export default function Contact() {
                     </div>
                     <br></br>
                     <div className='col-8 pt-3 mx-auto'>
-                        <input type="submit" className='btn' value='Send Message'></input>
+                        <input type="submit" id='submit' className='btn' value='Send Message'></input>
                     </div>
                 </form>
 
