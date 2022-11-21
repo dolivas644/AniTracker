@@ -65,9 +65,6 @@ export const AnimeList = ({ animelist, setAnimeInfo }) => {
           
         ) : <div className='randomBox'>
           <h2>You anime is NOT found. You can choose a random one</h2>
-          <div>
-            <button>Get Random Anime</button>
-          </div>
         </div>
 
       }

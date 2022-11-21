@@ -3,10 +3,10 @@ import './Comment.css'
 import { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import CommentBox from './CommentBox';
-
+import './box.css';
 
 const CommentForm = ({ mal_id }) => {
-const {user} = useAuth0();
+    const { user } = useAuth0();
 
     const [comment, setComment] = useState('');
 
@@ -25,21 +25,21 @@ const {user} = useAuth0();
     }
     return (
         <div>
-           <CommentBox mal_id={mal_id}/>
+            <CommentBox mal_id={mal_id} />
             <div className='mapComments'>
                 {comment.map(comment => {
                     return (
                         <>
-                        <div className='comment'>
-                        <div className='user-info-comment'>
-                                <p>{comment.name}</p>
-                                <img src={comment.picture}></img>
-                            </div>
-                            <div>
-                            <p>{comment.Text}</p>
-                            </div>
+                            <div className='comment'>
+                                <div className='user-info-comment'>
+                                <img className='comment-img' src={comment.picture}></img>
+                                    <p>{comment.name}</p>
+                                </div>
+                                <div className='comment-text'>
+                                    <p>{comment.Text}</p>
+                                </div>
 
-                        </div>
+                            </div>
                         </>
                     )
                 })}
