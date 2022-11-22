@@ -35,7 +35,7 @@ const CommentBox = ({ mal_id }) => {
             <div className='commentSection'>
                 <div className='top-bar'>
                     <h2>Comments:</h2></div>
-                <form>
+                <form onSubmit={(e)=> e.preventDefault()}>
                     <label>Enter your comment:
                         <input className='textBar' type="text" value={text} onChange={((e) => setText(e.target.value))} />
                     </label>

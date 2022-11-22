@@ -23,6 +23,7 @@ const AnimePage = () => {
     getData();
 
   }, [mal_id])
+  
   if (!animeData) {
     return 'Is Loading . . .'
   }
