@@ -7,7 +7,7 @@ config();
 const pgp = pgPromise({});
 //db connection
 const db = pgp({
-    connectionString: process.env.DB_URI,
+    connectionString: process.env.DATABASE_URL,
 });
 
 export default db;
