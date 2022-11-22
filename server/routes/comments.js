@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
     const query = 'INSERT INTO comment("Text", "user_id", "anime_id") VALUES($1, $2, $3) RETURNING *'
     const values = [listItem.Text, user_id, listItem.anime_id,]
     const result = await db.query(query, values);
-    // console.log(result);
+    console.log(result);
     res.status(201).json(result);
 });
 
