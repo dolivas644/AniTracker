@@ -4,19 +4,24 @@ import { useState, useEffect } from 'react';
 import './AnimePage.css';
 import Youtube from 'react-youtube';
 import CommentForm from './Comment/CommentForm';
+
 const AnimePage = () => {
   let { mal_id } = useParams();
 
   const [animeData, setAnimeData] = useState();
 
-  const getData = async () => {
-    const res = await fetch(`https://api.jikan.moe/v4/anime/${mal_id}`)
+  const getData = async (e) => {
+    e.preventDefault();
+    console.log(`${mal_id}`);
+    const res = await fetch(`https://api.jikan.moe/v4/anime/${mal_id}`);
     const resData = await res.json();
-    setAnimeData(resData.data)
+    console.log(resData);
+    setAnimeData(resData.data);
+    
   }
 
   useEffect(() => {
-    getData()
+    getData();
 
   }, [mal_id])
   if (!animeData) {
