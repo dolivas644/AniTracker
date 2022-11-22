@@ -10,8 +10,7 @@ const AnimePage = () => {
 
   const [animeData, setAnimeData] = useState();
 
-  const getData = async (e) => {
-    e.preventDefault();
+  const getData = async () => {
     console.log(`${mal_id}`);
     const res = await fetch(`https://api.jikan.moe/v4/anime/${mal_id}`);
     const resData = await res.json();
