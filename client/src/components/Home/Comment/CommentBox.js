@@ -8,6 +8,7 @@ const CommentBox = ({ mal_id }) => {
     const [text, setText] = useState('');
 
     const addComment = async () => {
+
         const commentInfo = {
             Text: text,
             anime: { anime_id: mal_id },
