@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
   const userSub = `SELECT id FROM users WHERE sub =$1`;
   //we are passing the sub from auth0 to our query
   const subInfo = await db.query(userSub, [sub])
-  console.log(subInfo, "Finds respective user id from given sub");
+  // console.log(subInfo, "Finds respective user id from given sub");
   //we are saving the targetd id as user_id
   const user_id = subInfo[0].id;
   try {
@@ -30,13 +30,14 @@ router.post('/', async (req, res) => {
     title: req.body.anime.title,
     image: req.body.anime.image
   }
-  console.log(listItem);
+  // console.log(listItem);
 
   //select id from users where sub == sub
   const userSub = `SELECT id FROM users WHERE sub =$1`;
   const subInfo = await db.query(userSub, [listItem.sub])
-  console.log(subInfo, "Finds respective user id from given sub");
+  // console.log(subInfo, "Finds respective user id from given sub");
   const user_id = subInfo[0].id;
+  // console.log(user_id)
 
   //select anime_id from animelist if it exists
   const animeId = `SELECT mal_id FROM anime WHERE mal_id=$1 LIMIT 1`;
@@ -47,14 +48,14 @@ router.post('/', async (req, res) => {
     const query = `INSERT into anime(mal_id, title, image) OVERRIDING SYSTEM VALUE VALUES($1, $2, $3) RETURNING mal_id`;
     const values = [listItem.anime_id, listItem.title, listItem.image]
     const result = await db.query(query, values)
-    console.log(result);
+    // console.log(result);
   }
 
   //query adds info to the junction table containing user_id & anime_id
   const query = 'INSERT INTO user_anime_list(user_id, anime_id) VALUES($1, $2) RETURNING *'
   const values = [user_id, listItem.anime_id]
   const result = await db.query(query, values);
-  console.log(result);
+  // console.log(result);
   res.json(result)
 });
 

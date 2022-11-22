@@ -26,12 +26,12 @@ router.post('/', async (req, res) => {
         anime_id: req.body.anime.anime_id,
         //   user_id: req.body.user_id
     }
-    console.log(listItem);
+    // console.log(listItem);
 
     //select id from users where sub == sub
     const userSub = `SELECT id FROM users WHERE sub =$1`;
     const subInfo = await db.query(userSub, [listItem.sub])
-    console.log(subInfo, "Finds respective user id from given sub");
+    // console.log(subInfo, "Finds respective user id from given sub");
     const user_id = subInfo[0].id;
 
     //select anime_id from animelist if it exists
@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
     const query = 'INSERT INTO comment("Text", "user_id", "anime_id") VALUES($1, $2, $3) RETURNING *'
     const values = [listItem.Text, user_id, listItem.anime_id,]
     const result = await db.query(query, values);
-    console.log(result);
+    // console.log(result);
     res.status(201).json(result);
 });
 
