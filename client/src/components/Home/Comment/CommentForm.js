@@ -25,7 +25,7 @@ const CommentForm = ({ mal_id }) => {
     }
     return (
         <div>
-            <CommentBox mal_id={mal_id} />
+            <CommentBox mal_id={mal_id} onCommentAdd={getComments}/>
             <div className='mapComments'>
                 {comment.map(comment => {
                     return (

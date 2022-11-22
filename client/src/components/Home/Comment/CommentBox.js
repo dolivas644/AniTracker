@@ -3,7 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useState, useEffect } from 'react';
 
 
-const CommentBox = ({ mal_id }) => {
+const CommentBox = ({ mal_id, onCommentAdd }) => {
     const { user } = useAuth0();
     const [text, setText] = useState('');
 
@@ -26,7 +26,8 @@ const CommentBox = ({ mal_id }) => {
             body: JSON.stringify(commentInfo)
         });
         const content = await response.json();
-        console.log(content, "user content")
+        onCommentAdd(content);
+        console.log(content, "user content");
         setText('');
     }
 
