@@ -15,9 +15,9 @@ const LoginDash = () => {
 
             <div className='main'>
                 <h1> Use the Log In button to get full access</h1>
-                <img className="HeadImg" src={HeadImg} alt="First slide"></img>
+                <img className="HeadImg" src={HeadImg} alt="Firstslide"></img>
                 
-                <img className="AniImg" src={AniSearch} alt="First slide"></img>
+                <img className="AniImg" src={AniSearch} alt="2ndslide"></img>
                 {/* <img className="HeadImg" src={ListImg} alt="First slide"></img>
                 <br></br>
                 <img className="AniListImg" src={AniList} alt="First slide"></img> */}
