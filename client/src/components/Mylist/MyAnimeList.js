@@ -46,7 +46,7 @@ const MyAnimeList = () => {
     });
     const content = await response.json();
     console.log(content, "update false to true")
-    alert("Your anime was moved to completed list");
+    // alert("Your anime was moved to completed list");
   }
 
     //useffect for completed
