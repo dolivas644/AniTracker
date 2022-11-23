@@ -147,34 +147,45 @@ I strongly recommend using a Node version manager like <a href="https://www.w3sc
 To install Node.js and npm 
 <h3>Install</h3>
 *Disclaimer: The app uses Auth0 and requires an Auth0 domain + ClientId to use. As wellas email JS, which requires an emailJS account: service id, domain id and template id*<br>
-Clone the repo:<br>
-<br><code>https://github.com/dolivas644/AniTracker.git</code>
-<br>To clean your folder from the owner git, run the command:
-<br><code>rm -rf .git</code>
-<br>Run the command to start your directory:
-<br><code>git init</code>
-<br>Go to the server folder in the project:
-<br><code>cd server</code>
-<br>Install all NPM packages using this in the root directory:
-<br><code>npm install</code>
-<br>Inside your server folder, create an .env file with:
-<br><code>touch .env</code>
-<br>Inside your .env add:
-<br><code>postgres://localhost:5432/AnimeTracker</code>
-<br>BACK TO THE TERMINAL:<br>
-<br>To restore the DB dump file that the project already contain, just run the command:
-<br><code>psql -U postgres -f db.sql</code>
-<br>If you had configured your postgres without password just run the command:
-<br><code>psql -f db.sql</code>
-<br><code>npm start</code>
-<br>Go to client folder:
-<br><code>cd ..</code>
-<br><code>cd client</code>
-<br><code> npm install</code>
-<br>Both server and Client can run with:
-<br><code>npm start</code>
+<br></br>
+Clone Project & cd into project directory
+<br></br>
+<code>
+  git clone https://github.com/dolivas644/AniTracker.git
+  <br></br>
+  cd AniTracker
+  </code>
+  <br></br>
+Install all packages.
+<br></br>
+<code>
+  cd client && npm install && cd ../server && npm install
+</code>
+<br></br>
+Connect the database and the data.
+<br></br>
+<code>
+  cd server
+  psql postgres -f db.sql
+  </code>
+  <br></br>
+
+Start the program
+<br></br>
+
+ Have two servers running at the same time. Open two terminals
+<br></br>
+On Client terminal
+<br></br>
+ <code> cd client && npm start</code>
+  <br></br>
+On Server terminal
+<br></br>
+ <code> cd server && npm start</code>
+
+Note: Client server will be running on http://localhost:3000 and server will be running on http://localhost:8080
   <h2>Testing</h2>
   <h3>Jest Testing</h3>
-  To run tests on the terminal, go to the Clien side and run the following command:
+  To run tests on the terminal, go to the Client side and run the following command:
   <code>npm test</code>
   
