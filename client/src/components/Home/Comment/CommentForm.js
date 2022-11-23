@@ -16,7 +16,6 @@ const CommentForm = ({ mal_id }) => {
         setComment(content);
     }
 
-
     useEffect(() => {
         getComments()
     }, [mal_id])

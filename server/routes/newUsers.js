@@ -21,8 +21,12 @@ router.post('/', async (req, res) => {
     } else{
     const query = 'INSERT INTO users(name, picture, email, sub) VALUES($1, $2, $3, $4) RETURNING *'
     const values = [ newUser.name, newUser.picture, newUser.email, newUser.sub]
-    const result = await db.query(query, values);
-    // console.log(result);
+    try{
+      const result = await db.query(query, values);
+    }
+   catch(e){
+console.log(e.message);
+   }
   
     }
   
