@@ -1,8 +1,34 @@
 # AniTracker
 <img src="https://github.com/dolivas644/AniTracker/blob/main/client/src/components/Images/Head.png?raw=true">
-<h2> Why use Anime Tracker? - App Overview </h2>
+<h2 align="center"> Why use Anime Tracker? - App Overview </h2>
   ANIME TRACKER is an application for users that have an interest in anime and are looking to keep track of what they are currently watching and have completed. With the rise in popularity of anime, the frequent release of anime makes it difficult to keep track of the current and past anime schedule. 
-<h3> Goal for users </h3>
+  <br></br>
+  <h1 align="center">TEST SITE HERE</h1>
+  <a align="center" href="https://server-0zje.onrender.com" >ANIME TRACKER DEPLOMENT</a>
+  <h2 align="center">MOCK USER ACCOUNTS (CAN BE USED TO TEST SITE)</h2>
+  <table align="center">
+  <tr>
+    <th>EMAIL</th>
+    <th>PASSWORD</th>
+  </tr>
+  <tr>
+    <td>Yolis@TheCoolCat.com</td>
+     <td>Manolo333</td>
+  </tr>
+  <tr>
+     <td>Xochitl@TheTurtleCycler.com</td>
+     <td>Cannondale23</td>
+  </tr>
+  <tr>
+     <td>Kimmy@TheCandyHoarder.com</td>
+     <td>SweetLikeMe64</td>
+  </tr>
+  <tr>
+     <td>Dean@TheEdgeLord.com</td>
+     <td>IAmTheMasterpiece101</td>
+  </tr>
+</table>
+<h3 align="center"> Goal for users </h3>
   <ol>
   <li> Keep track of anime (Currently watching & completed)</li>
   <li> Search for anime </li>
@@ -14,8 +40,8 @@
     <li> People</li>
   </ol>
  </ol>
-<h2> Techstack </h2>
-   <table>
+<h2 align="center">> Techstack </h2>
+   <table align="center">
   <tr align="center">
     <td align="center"><img src="https://user-images.githubusercontent.com/76704309/202346526-a5ff4025-f329-4869-9bf2-a55c438acce4.png" height="30px"><br>HTML</td>
     <td align="center"><img src="https://user-images.githubusercontent.com/76704309/202346792-38f643ef-1547-437c-be94-934896ffb419.png" height="30px"><br>CSS</td>
@@ -29,43 +55,43 @@
          <td align="center"><img src="https://user-images.githubusercontent.com/76704309/202370441-e6500520-443f-46c0-8062-243cfdf0ee84.png" height="30px"><br>emailJS</td>
   </tr>
 </table>
-   <h2>APIs</h2>
-   <table>
+   <h2 align="center">APIs</h2>
+   <table align="center">
      <tr>
          <td align="center"><img src="https://user-images.githubusercontent.com/76704309/202351394-d7590e35-21ac-4f29-b042-b91299187901.png" height="30px"><br>Jikan</td>
         <td align="center"><img src="https://user-images.githubusercontent.com/76704309/202351473-c2b9308b-9fd1-4dd6-980e-108bb1eb8731.png" height="40px"><br>Auth0</td>
      </tr>
    </table>
-<h2>Minimum Viable Product</h2>
-<h3>Tier 1</h3>
-<ul>
+<h2 align="center">Minimum Viable Product</h2>
+<h3 align="center">Tier 1</h3>
+<ul >
   <li>Find anime using search bar</li>
   <li>Allow users to add anime to watchlist</li>
   <li>User Registration</li>
 </ul>
-<h3>Tier 2</h3>
-<ul>
+<h3 align="center">Tier 2</h3>
+<ul >
   <li>Complete anime watchlist</li>
   <li>Allow users to remove anime from watchlist</li>
   <li>Get top rankings from different categories</li>
 </ul>
-<h3>Tier 3</h3>
-<ul>
+<h3 align="center">Tier 3</h3>
+<ul >
 <li>Allow users to comment on anime pages</li>
 </ul>
-<h4>Future additions</h4>
+<h4 align="center">Future additions</h4>
 <ul>
   <li>Allow users to rate anime in their list</li>
   <li>Allow users to make their own custom lists</li>
 </ul>
-<h3>Technical Risks</h3>
+<h3 align="center">Technical Risks</h3>
 <ul>
   <li>Difficulty in saving anime data from API into database</li>
 </ul>
-<h2>Drawing Board/Planning Phase</h2>
-<h3> Official Database Schema </h3>
-<h4>User</h4>
-<table>
+<h2 align="center">Drawing Board/Planning Phase</h2>
+<h3 align="center"> Official Database Schema </h3>
+<h4 align="center">User</h4>
+<table align="center">
   </tr>
   <tr>
     <th>Id</th>
@@ -82,8 +108,8 @@
     <td>Character Varying</td>
   </tr>
 </table>
-<h4>Anime</h4>
-<table>
+<h4 align="center">Anime</h4>
+<table align="center">
   <tr>
     <th>mal_id</th>
     <th>Title</th>
@@ -95,8 +121,8 @@
     <td>Text</td>
   </tr>
 </table>
-<h4>user_anime_list</h4>
-<table>
+<h4 align="center">user_anime_list</h4>
+<table align="center">
   <tr>
     <th>Id</th>
     <th>user_id</th>
@@ -110,12 +136,12 @@
     <td>Boolean</td>
   </tr>
 </table>
-<h5>Original Schema</h5>
+<h5 align="center">Original Schema</h5>
 <img src="https://i.postimg.cc/1z77NQ27/Screenshot-20221116-081806.png)](https://postimg.cc/67RfDD9C">
-<h2>Wireframe</h2>
+<h2align="center">Wireframe</h2>
 <img height="500px" width="100%" src="https://i.postimg.cc/mDX0y9q4/Screenshot-20221116-085717.png)](https://postimg.cc/62Zj98tb)">
 <img height="500px" width="100%" src="https://i.postimg.cc/R0sBX262/Screenshot-20221116-085801.png)](https://postimg.cc/Lq1wsCVV))">
-<h2>Installation</h2>
+<h2 >Installation</h2>
 <h3>Node</h3>
 I strongly recommend using a Node version manager like <a href="https://www.w3schools.com](https://github.com/nvm-sh/nvm"></a> 
 To install Node.js and npm 
