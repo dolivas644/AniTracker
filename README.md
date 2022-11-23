@@ -40,7 +40,7 @@
     <li> People</li>
   </ol>
  </ol>
-<h2 align="center">> Techstack </h2>
+<h2 align="center"> Techstack </h2>
    <table align="center">
   <tr align="center">
     <td align="center"><img src="https://user-images.githubusercontent.com/76704309/202346526-a5ff4025-f329-4869-9bf2-a55c438acce4.png" height="30px"><br>HTML</td>
